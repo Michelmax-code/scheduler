@@ -24,13 +24,15 @@ const Form = function(props) {
         <form autoComplete="off" onSubmit={event => event.preventDefault()}>
           <input
             className="appointment__create-input text--semi-bold"
-            name={name}
+            value={name}
             type="text"
             placeholder="Enter Student Name"
             /*
           This must be a controlled component
         */
+            onChange={(event) => setName(event.target.value)}
           />
+          {name}
         </form>
         <InterviewerList
           interviewers={props.interviewers}
@@ -41,7 +43,7 @@ const Form = function(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button onClick={cancel} danger>Cancel</Button>
-          <Button onClick={() => props.onSave(name)} confirm>Save</Button>
+          <Button onClick={() => props.onSave(name, interviewer)} confirm>Save</Button>
         </section>
       </section>
     </main>
