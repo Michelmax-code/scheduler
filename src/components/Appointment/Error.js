@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "components/Appointment/styles.scss";
 
@@ -13,7 +13,7 @@ const Error = function(props) {
     className="appointment__error-close"
     src="images/close.png"
     alt="Close"
-    onClose={props.onClose}
+    onClick={props.onClose}
   />
 </main>
   )
