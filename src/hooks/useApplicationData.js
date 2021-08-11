@@ -22,13 +22,8 @@ export default function Application(props) {
   }, []);
 
   const setDay = day => setState({ ...state, day });
-  function bookInterview(id, interview) {
-    console.log(state.days);
-    for (let day of [...state.days]) {
-      if (day.appointments.includes(id)) {
-        day.spots -= 1;
-      }
-    }
+
+    function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -37,17 +32,21 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-
+    const days = JSON.parse(JSON.stringify([...state.days])); // deep copy
+    for (let day of days) {
+      if (day.appointments.includes(id) && !state.appointments[id].interview) {
+        day.spots -= 1;
+      }
+    }
     return axios.put(`/api/appointments/${id}`, appointment)
-    .then(res => setState({...state, appointments}));
-
-
+    .then(res => setState({...state, appointments, days}));
   }
 
   function cancelInterview(id) {
-    for (let day of [...state.days]) {
-      if (day.appointments.includes(id)) {
-        day.spots += 1
+    const newDays = JSON.parse(JSON.stringify([...state.days]));
+    for (let index in [...state.days]) {
+      if (state.days[index].appointments.includes(id)) {
+        newDays[index].spots += 1
       }
     }
     const appointment = {
@@ -55,8 +54,8 @@ export default function Application(props) {
       interview: null
     };
 
-    return axios.delete(`/api/appointments/${id}`, { interview: null })
-    .then(res => setState(prev => ({...prev, appointments: {...prev.appointments, [id]: appointment}})))
+    return axios.delete(`/api/appointments/${id}`)
+    .then(res => setState(prev => ({...prev, days: newDays, appointments: {...prev.appointments, [id]: appointment}})))
   }
   return{ state, setDay, bookInterview, cancelInterview }
-}  
+} 
