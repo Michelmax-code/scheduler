@@ -39,11 +39,11 @@ export default function Application(props) {
       }
     }
     return axios.put(`/api/appointments/${id}`, appointment)
-    .then(res => setState({...state, appointments, days}));
+    .then(res => setState({...state, appointments}));
   }
 
   function cancelInterview(id) {
-    const newDays = JSON.parse(JSON.stringify([...state.days]));
+    const newDays = [...state.days];
     for (let index in [...state.days]) {
       if (state.days[index].appointments.includes(id)) {
         newDays[index].spots += 1
