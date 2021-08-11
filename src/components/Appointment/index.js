@@ -22,6 +22,7 @@ const ERROR_DELETE = "ERROR_DELETE";
 
 export default function Appointment(props) {
   function save(name, interviewer) {
+    if (name && interviewer) {
     const interview = {
       student: name,
       interviewer
@@ -32,8 +33,10 @@ export default function Appointment(props) {
       transition(SHOW);
     })
     .catch(error => transition(ERROR_SAVE, true));
+  } else {
+    transition(ERROR_SAVE)
   }
-
+  }
   function deleteInterview(name, interviewer) {
     const interview = {
       student: name,
