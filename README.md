@@ -1,8 +1,26 @@
 # Interview Scheduler
 
+Scheduler is a tool to be used by students to book an interview with the instructor of your preference based in a single page app, also the student can edit and delete the appointment if is necessary.  
+
+## Screenshots
+!["Main"]()
+!["Create New Appointment"]()
+!["Delete Appointment"]()
+
+
 ## Setup
 
 Install dependencies with `npm install`.
+
+## Dependencies
+
+- axios
+- classnames
+- normalize.css
+- nvm
+- react
+- react-dom
+- react-scripts
 
 ## Running Webpack Development Server
 
