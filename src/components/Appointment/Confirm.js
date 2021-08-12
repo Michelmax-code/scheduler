@@ -2,7 +2,7 @@ import React from "react";
 
 import "components/Appointment/styles.scss";
 import Button from "components/Button";
-
+//function to confirm before to complete an edition
 const Confirm = function(props) {
   return (
     <main className="appointment__card appointment__card--confirm">

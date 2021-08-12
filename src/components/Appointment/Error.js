@@ -1,7 +1,7 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-
+// func to show error during appointment creation
 const Error = function(props) {
   return (
     <main className="appointment__card appointment__card--error">

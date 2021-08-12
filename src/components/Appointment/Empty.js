@@ -1,7 +1,7 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-
+//func to add appointment 
 const Empty = function(props) {
   return (
     <main className="appointment__add">

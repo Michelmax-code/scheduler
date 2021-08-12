@@ -1,7 +1,7 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-
+//funct to render the appointment form
 const Show = function (props) {
   return (
     <main className="appointment__card appointment__card--show">

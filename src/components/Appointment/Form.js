@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Button from "components/Button";
 
 import InterviewerList from "components/InterviewerList";
-
+//funct to manage the creation of the interview
 const Form = function(props) {
   const [name, setName] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);

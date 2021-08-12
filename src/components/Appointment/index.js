@@ -19,7 +19,7 @@ const CONFIRM = "CONFIRM";
 const EDIT = "EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
-
+//function to create appointment
 export default function Appointment(props) {
   function save(name, interviewer) {
     if (name && interviewer) {
@@ -37,6 +37,7 @@ export default function Appointment(props) {
     transition(ERROR_SAVE)
   }
   }
+  //function to delete
   function deleteInterview(name, interviewer) {
     const interview = {
       student: name,
@@ -47,7 +48,7 @@ export default function Appointment(props) {
     .then(() =>transition(EMPTY))
     .catch(() =>transition(ERROR_DELETE, true))
   }
-
+//function to edit
   function editSave(name, interviewer) {
     const interview = {
       student: name,

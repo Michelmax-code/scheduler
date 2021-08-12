@@ -1,7 +1,7 @@
 import React from "react";
 
 import "components/Appointment/styles.scss";
-
+//func validating appointment status
 const Status = function(props) {
   return (
     <main className="appointment__card appointment__card--status">
