@@ -3,9 +3,9 @@
 Scheduler is a tool to be used by students to book an interview with the instructor of your preference based in a single page app, also the student can edit and delete the appointment if is necessary.  
 
 ## Screenshots
-!["Main"]()
-!["Create New Appointment"]()
-!["Delete Appointment"]()
+!["Main"](https://github.com/Michelmax-code/scheduler/blob/master/docs/main.png?raw=true)
+!["Create New Appointment"](https://github.com/Michelmax-code/scheduler/blob/master/docs/create.png?raw=true)
+!["Delete Appointment"](https://github.com/Michelmax-code/scheduler/blob/master/docs/edit.png?raw=true)
 
 
 ## Setup
